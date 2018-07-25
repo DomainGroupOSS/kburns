@@ -360,7 +360,7 @@ cmd = [
     "-t", ((options.slide_duration_s-options.fade_duration_s)*slides.count+options.fade_duration_s).to_s
   ]),
   "-map", "[out]", 
-  *(options.audio ? ["-map", "#{slides.count}:a"] : []),
+  *(options.audio ? ["-map", "#{slides.count}:a"] : []), "-preset", "ultrafast", "-tune", "stillimage",
   "-c:v", options.codec, output_file
 ]
 puts cmd.join(" ")
