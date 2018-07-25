@@ -82,7 +82,6 @@ output_file = ARGV[-1]
 property_id = ARGV[-2]
 
 url = "https://mobile-adapter-api.domain.com.au/v1/property-details/#{property_id}"
-puts url
 uri = URI(url)
 response = Net::HTTP.get(uri)
 response_dict = JSON.parse(response) 
